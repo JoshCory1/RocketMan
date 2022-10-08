@@ -1,13 +1,17 @@
+using System.Numerics;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+
+    Rigidbody rb;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();  
     }
 
     // Update is called once per frame
@@ -20,7 +24,7 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            Debug.Log("up up and away");
+            rb.AddRelativeForce(UnityEngine.Vector3.up);
         }
     }
     void ProcessRotation()
