@@ -53,7 +53,7 @@ public class Movement : MonoBehaviour
     {
         rb.freezeRotation = true; 
         transform.Rotate(UnityEngine.Vector3.forward * rotationThisFrame * Time.deltaTime);
-        rb.freezeRotation = false;  
+        rb.freezeRotation = false;
     }
 
     }
