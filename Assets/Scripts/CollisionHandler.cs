@@ -3,9 +3,22 @@ using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
+    [SerializeField] float delayTime = 1f;
+    [SerializeField] AudioClip crashSound;
+    [SerializeField] AudioClip successSound;
+
+    AudioSource AudioSound;
+
+    bool isTransitioning = false;
+
+    void Start() 
+    {
+        AudioSound = GetComponent<AudioSource>();
+    }
     void OnCollisionEnter(Collision other) 
     {
-    switch (other.gameObject.tag)
+        if(isTransitioning) { return; }
+        switch (other.gameObject.tag)
         {
             case "Frendly":
                 Debug.Log("Start");
@@ -14,7 +27,7 @@ public class CollisionHandler : MonoBehaviour
                 Debug.Log("Fule");
                 break;
             case "Finish":
-                Invoke("Nextlvl", 1);
+                moveToNextlvl();
                 break;
             default:
                 StarCrashSequence();
@@ -25,11 +38,24 @@ public class CollisionHandler : MonoBehaviour
     }
     void StarCrashSequence()
     {
+        isTransitioning = true;
+        AudioSound.PlayOneShot(crashSound);
+        // todo add particle effect on crash
         GetComponent<Movement>().enabled = false; 
-       Invoke("ReloadLevel", 1f);
+        Invoke("ReloadLevel", delayTime);
     }
+    void moveToNextlvl()
+    {
+        isTransitioning = true;
+        AudioSound.PlayOneShot(successSound);
+        // todo add particle effect on success
+        GetComponent<Movement>().enabled = false;
+        Invoke("Nextlvl", delayTime);
+    }
+    
     void ReloadLevel()
     {
+        isTransitioning = true;
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
     }
