@@ -6,6 +6,8 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] float delayTime = 1f;
     [SerializeField] AudioClip crashSound;
     [SerializeField] AudioClip successSound;
+    [SerializeField] ParticleSystem crashParticls;
+    [SerializeField] ParticleSystem successParticls;
 
     AudioSource AudioSound;
 
@@ -23,9 +25,6 @@ public class CollisionHandler : MonoBehaviour
             case "Frendly":
                 Debug.Log("Start");
                 break;
-            case "Fuel":
-                Debug.Log("Fule");
-                break;
             case "Finish":
                 moveToNextlvl();
                 break;
@@ -39,16 +38,18 @@ public class CollisionHandler : MonoBehaviour
     void StarCrashSequence()
     {
         isTransitioning = true;
+        AudioSound.Stop();
         AudioSound.PlayOneShot(crashSound);
-        // todo add particle effect on crash
+        crashParticls.Play();
         GetComponent<Movement>().enabled = false; 
         Invoke("ReloadLevel", delayTime);
     }
     void moveToNextlvl()
     {
         isTransitioning = true;
+        AudioSound.Stop();
         AudioSound.PlayOneShot(successSound);
-        // todo add particle effect on success
+        successParticls.Play();
         GetComponent<Movement>().enabled = false;
         Invoke("Nextlvl", delayTime);
     }
