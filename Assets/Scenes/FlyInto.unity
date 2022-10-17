@@ -146,7 +146,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7922054708599312135, guid: 3559dd4d2cff6ab49b06e95e62515446, type: 3}
       propertyPath: period
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7922054708599312135, guid: 3559dd4d2cff6ab49b06e95e62515446, type: 3}
       propertyPath: movementVector.y
@@ -380,7 +380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3419786078824366994, guid: 4a2331ad604e60a478e6cb6e58a34c2a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 37.61
+      value: 43.57
       objectReference: {fileID: 0}
     - target: {fileID: 3419786078824366994, guid: 4a2331ad604e60a478e6cb6e58a34c2a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1262,7 +1262,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7922054708599312135, guid: 3559dd4d2cff6ab49b06e95e62515446, type: 3}
       propertyPath: period
-      value: 3
+      value: 5.1
       objectReference: {fileID: 0}
     - target: {fileID: 7922054708599312135, guid: 3559dd4d2cff6ab49b06e95e62515446, type: 3}
       propertyPath: movementVector.y
@@ -1628,7 +1628,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7922054708599312135, guid: 3559dd4d2cff6ab49b06e95e62515446, type: 3}
       propertyPath: period
-      value: 2.8
+      value: 4.8
       objectReference: {fileID: 0}
     - target: {fileID: 7922054708599312135, guid: 3559dd4d2cff6ab49b06e95e62515446, type: 3}
       propertyPath: movementVector.y
