@@ -12,6 +12,18 @@ EditorBuildSettings:
     path: Assets/Scenes/FlyUnder.unity
     guid: 1d13e8c8c20e2ed4b80257996204f51b
   - enabled: 1
-    path: Assets/Scenes/Fly and Move.unity
+    path: Assets/Scenes/FlyThrough.unity
+    guid: 0fb592f15d35d65429d52b07e333617c
+  - enabled: 1
+    path: Assets/Scenes/FlyAround.unity
     guid: 6bcd0709ae200874f9614cd3edb0ee5a
+  - enabled: 1
+    path: Assets/Scenes/FlyInto.unity
+    guid: 3cce6374b68dbe6479dc12a022873bb1
+  - enabled: 1
+    path: Assets/Scenes/FlyAvoid.unity
+    guid: e327813a0dd96a840adcfd99de439aa8
+  - enabled: 1
+    path: Assets/Scenes/FlyingTube.unity
+    guid: 3f6e35a9e1752544c84a3c63da3963a2
   m_configObjects: {}
